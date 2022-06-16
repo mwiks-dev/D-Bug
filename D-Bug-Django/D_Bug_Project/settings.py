@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'D_Bug_App',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
