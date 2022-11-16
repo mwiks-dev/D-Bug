@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL='D_Bug_Users.User'
 
-LOGIN_URL='/admin/login/'
+# LOGIN_URL='/admin/login/'
 
 
 # Application definition
