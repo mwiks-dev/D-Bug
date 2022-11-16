@@ -7,7 +7,7 @@ from .models import *
 
 # Create your views here.
 class GenerateUserCredential(APIView):
-    def get(self,request,format=None):
+    def post(self,request,format=None):
         results = self.request.query_params.get('type')
         response = {}
         r = requests.get('')
@@ -21,5 +21,5 @@ class GenerateUserCredential(APIView):
             response['status'] = r.status_code
             response['message'] = 'Success'
             response['credentials'] = {}
-            
+
         return Response(response)

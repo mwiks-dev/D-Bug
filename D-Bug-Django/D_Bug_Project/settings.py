@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'D_Bug_App',
     'D_Bug_Users',
     'rest_framework',
-    'oauth2_provider',
+    # 'oauth2_provider',
 ]
 
 MIDDLEWARE = [

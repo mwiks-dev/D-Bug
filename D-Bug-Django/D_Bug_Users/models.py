@@ -4,7 +4,7 @@ from cloudinary.models import CloudinaryField
 
 class User(AbstractUser):
     user_id = models.IntegerField(null=False)
-    name = models.CharField()
+    name = models.CharField(max_length=15,null=False)
 
 class Profile(models.Model):
     name = models.CharField(max_length=15,null=False)
