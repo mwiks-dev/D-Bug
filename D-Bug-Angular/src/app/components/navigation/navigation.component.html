@@ -12,7 +12,8 @@
   <div class="authentication">
     <div class="auth-button">
       <!-- <button>Post a Question</button> -->
-      <button>Login</button>
+      <app-login *ngIf="(auth.isAuthenticated$ | async) === false"></app-login>
+      <app-logout *ngIf="(auth.isAuthenticated$ | async) === true"></app-logout>
     </div>
     <div class="toggle">
       <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">

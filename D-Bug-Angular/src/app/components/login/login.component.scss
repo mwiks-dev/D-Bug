@@ -1,0 +1,11 @@
+@import "../../../global";
+button {
+  padding: 0.5vw 2vw;
+  outline: none;
+  border: none;
+  background-color: $primary;
+  border-radius: 0.3vw;
+  font-size: 1vw;
+  cursor: pointer;
+  margin-right: 1vw;
+}
