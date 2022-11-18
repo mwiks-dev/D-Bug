@@ -7,6 +7,8 @@ from .models import *
 from django.http import JsonResponse,HttpResponse
 from rest_framework import status
 import requests
+from decouple import config
+
 
 
 # Create your views here.
@@ -47,7 +49,7 @@ def ProfileDetails(request,name,format=None):
         return HttpResponse(status=status.HTTP_204_NO_CONTENT)
 
 owner = 'thesmartcoder7'
-access_token = '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'
+access_token = config('access_token')
 headers = {'Authorization':'Token' + access_token}
 
 url = f'https://api.github.com/users/{owner}/repos'
