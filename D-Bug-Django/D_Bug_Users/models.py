@@ -2,9 +2,9 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 from cloudinary.models import CloudinaryField
 
-class User(AbstractUser):
-    user_id = models.IntegerField(null=False)
-    name = models.CharField(max_length=15,null=False)
+# class User(AbstractUser):
+#     user_id = models.IntegerField(null=False)
+#     name = models.CharField(max_length=15,null=False)
 
 class Profile(models.Model):
     name = models.CharField(max_length=15,null=False)

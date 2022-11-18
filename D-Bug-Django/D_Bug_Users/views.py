@@ -1,25 +1,25 @@
 from django.shortcuts import render
-from rest_framework.views import APIView
 from rest_framework.response import Response
-import requests
-import json
+from .serializers import *
+from rest_framework.decorators import api_view
+from rest_framework.parsers import JSONParser
+from django.views.decorators.csrf import csrf_exempt
 from .models import *
+from django.http import JsonResponse
+from rest_framework import status
 
 # Create your views here.
-class GenerateUserCredential(APIView):
-    def post(self,request,format=None):
-        results = self.request.query_params.get('type')
-        response = {}
-        r = requests.get('')
-        r_status = r.status_code
-        if r_status == 200:
-            data = json.loads(r.json)
-            for credentials in data:
-                user = User(user_id='',name=credentials)
-                user.save()
-        else:
-            response['status'] = r.status_code
-            response['message'] = 'Success'
-            response['credentials'] = {}
-
-        return Response(response)
+@api_view(['GET','POST'])
+def ProfileFunc(request,format=None):
+    if request.method == 'POST':
+        data = JSONParser().parse(request)
+        profile = ProfileSerializer(data = data)
+        if profile.is_valid():
+            profile.save()
+            return JsonResponse(profile.data, status = status.HTTP_201_CREATED)
+        return JsonResponse(profile.errors ,status=status.HTTP_400_BAD_REQUEST)
+    
+    elif request.method == 'GET':
+        profiles = Profile.objects.all()
+        profiles = ProfileSerializer(profiles,many=True)
+        return Response(profiles.data)
