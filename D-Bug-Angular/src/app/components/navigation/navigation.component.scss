@@ -48,9 +48,16 @@
     }
     .toggle {
       cursor: pointer;
-      svg {
-        cursor: pointer;
-        width: 2.5vw;
+      .image {
+        width: 3vw;
+        height: 3vw;
+        border-radius: 50%;
+        object-fit: fill;
+        overflow: hidden;
+        img {
+          width: 100%;
+          object-fit: fill;
+        }
       }
     }
   }

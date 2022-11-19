@@ -14,10 +14,10 @@ import { RankedUserComponent } from "./components/ranked-user/ranked-user.compon
 import { QuestionComponent } from "./components/question/question.component";
 
 import { AuthModule } from "@auth0/auth0-angular";
-import { environment } from "src/environments/environment";
+import { environment } from "../environments/environment";
 import { LoginComponent } from "./components/login/login.component";
-import { LogoutComponent } from './components/logout/logout.component';
-import { ProfileComponent } from './components/profile/profile.component';
+import { LogoutComponent } from "./components/logout/logout.component";
+import { ProfileComponent } from "./components/profile/profile.component";
 
 @NgModule({
   declarations: [
