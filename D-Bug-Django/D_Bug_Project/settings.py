@@ -28,9 +28,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-AUTH_USER_MODEL='D_Bug_Users.User'
+# AUTH_USER_MODEL='D_Bug_Users.User'
 
-LOGIN_URL='/admin/login/'
+# LOGIN_URL='/admin/login/'
 
 
 # Application definition
@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'D_Bug_App',
     'D_Bug_Users',
     'rest_framework',
-    'oauth2_provider',
+    # 'oauth2_provider',
 ]
 
 MIDDLEWARE = [
@@ -91,11 +91,11 @@ DATABASES = {
     }
 }
 
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
-    )
-}
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': (
+#         'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
+#     )
+# }
 
 
 # Password validation
