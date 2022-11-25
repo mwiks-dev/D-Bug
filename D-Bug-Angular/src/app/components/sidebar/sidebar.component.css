@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1vw;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.main .topics,
+.main .users {
+  box-shadow: 0 0 0.5vw rgb(233, 233, 233);
+  border-radius: 0.5vw;
+  width: 100%;
+  padding: 1.5vw;
+  margin: 1vw 0;
+}
+.main .topics h2,
+.main .users h2 {
+  margin-bottom: 1vw;
+}
+.main .topics ul,
+.main .users ul {
+  list-style-type: circle;
+  padding-left: 2vw;
+}
+.main .topics ul li,
+.main .users ul li {
+  margin: 0.5vw 0;
+  color: #f9ae19;
+}
+.main .topics ul li span,
+.main .users ul li span {
+  color: rgb(61, 61, 61);
+}
+.main .topics app-ranked-user,
+.main .users app-ranked-user {
+  margin: 0.5vw 0;
+}
+.main button {
+  width: 100%;
+  padding: 0.5vw 2vw;
+  outline: none;
+  border: none;
+  background-color: #f9ae19;
+  border-radius: 0.3vw;
+  font-size: 1vw;
+  cursor: pointer;
+  margin-bottom: 1vw;
+}/*# sourceMappingURL=sidebar.component.css.map */

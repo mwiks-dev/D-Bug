@@ -1,0 +1,13 @@
+app-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2vw 0;
+}
+
+app-questions {
+  padding: 2vw 5vw;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}/*# sourceMappingURL=home.component.css.map */
