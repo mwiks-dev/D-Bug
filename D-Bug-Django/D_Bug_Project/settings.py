@@ -28,9 +28,31 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-AUTH_USER_MODEL='D_Bug_Users.User'
+CORS_ALLOW_ALL_ORIGINS = True
 
-LOGIN_URL='/admin/login/'
+CORS_ALLOW_METHODS = [
+    "DELETE",
+    "GET",
+    "PATCH",
+    "POST",
+    "PUT",
+]
+
+CORS_ALLOW_HEADERS = [
+    "accept",
+    "accept-encoding",
+    "authorization",
+    "content-type",
+    "dnt",
+    "origin",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
+]
+
+# AUTH_USER_MODEL='D_Bug_Users.User'
+
+# LOGIN_URL='/admin/login/'
 
 
 # Application definition
@@ -45,10 +67,13 @@ INSTALLED_APPS = [
     'D_Bug_App',
     'D_Bug_Users',
     'rest_framework',
-    'oauth2_provider',
+    "corsheaders",
+
+    # 'oauth2_provider',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -91,11 +116,11 @@ DATABASES = {
     }
 }
 
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
-    )
-}
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': (
+#         'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
+#     )
+# }
 
 
 # Password validation
@@ -127,6 +152,8 @@ TIME_ZONE = 'Africa/Nairobi'
 USE_I18N = True
 
 USE_TZ = True
+
+
 
 
 # Static files (CSS, JavaScript, Images)
